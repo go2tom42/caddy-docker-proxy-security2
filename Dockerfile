@@ -9,8 +9,6 @@ RUN xcaddy build \
 
 FROM caddy:${CADDY_VERSION}-alpine
 
-RUN apk add --no-cache curl
-
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
 CMD ["caddy", "docker-proxy"]
